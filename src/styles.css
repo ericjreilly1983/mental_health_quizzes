@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 div.navigation {
-	height: 100%;
 	background: #de0011;
 	top: 0;
 	left: 0;
 	position: absolute;
+	height: 100%;
+	z-index: 1;
 }
 
 nav.routes ul {
@@ -15,4 +16,15 @@ nav.routes ul {
 
 nav.routes ul li {
 	margin-bottom: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid black;
+	margin-left: -20px;
+	margin-right: 20px;
+}
+
+nav.routes ul li a {
+	text-transform: uppercase;
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
 }
