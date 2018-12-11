@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+div.navigation {
+	height: 100%;
+	background: #de0011;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+nav.routes ul {
+	list-style: none;
+	margin: 0;
+}
+
+nav.routes ul li {
+	margin-bottom: 20px;
+}

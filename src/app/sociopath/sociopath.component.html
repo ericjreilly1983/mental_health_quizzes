@@ -1,0 +1,106 @@
+
+<div *ngIf = "!submitted" class="container">
+<h1>Are You a Sociopath?</h1>
+<p>Please select how much you agree with the following statements.</p>
+
+<form [formGroup] = "sociopathForm" (ngSubmit)="sendForm(sociopathForm)"><!-- remember i can pass in the form itself to the submit handler-->
+<label>Name: </label>
+<div class="form-group">    
+<input type="text" name="name" formControlName = "name" class = "form-control col-md-3" [ngClass] = "{'is-invalid': sociopathForm.controls.name.touched && sociopathForm.controls.name.invalid}">
+<div class = "invalid-feedback">   
+        <div>A name is required.</div>
+</div>
+</div>
+<br>
+<label for="firstQuestion">I have a difficult time maintaining healthy relationships.</label>
+<div class = "form-group">
+<select id="firstQuestion" formControlName = "firstQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.firstQuestion.touched && sociopathForm.controls.firstQuestion.invalid}">
+    <option value = "" disabled>--Please choose an option--</option>
+    <option value="Strongly Disagree">Strongly Disagree</option>
+    <option value="Disagree">Disagree</option>
+    <option value="Neutral">Don't Know/Not Sure</option>
+    <option value="Agree">Agree</option>
+    <option value="Strongly Agree">Strongly Agree</option>
+</select>
+<div class = "invalid-feedback">   
+        <div>Please choose a valid option from the list.</div>
+</div>
+</div>
+<br>
+<label for = "secondQuestion">I often start new projects or hobbies before quickly losing interest.</label>
+<div class = "form-group">
+<select id="secondQuestion" formControlName = "secondQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.secondQuestion.touched && sociopathForm.controls.secondQuestion.invalid}" required>
+    <option value= "" disabled>--Please choose an option--</option>
+    <option value="Strongly Disagree">Strongly Disagree</option>
+    <option value="Disagree">Disagree</option>
+    <option value="Neutral">Don't Know/Not Sure</option>
+    <option value="Agree">Agree</option>
+    <option value="Strongly Agree">Strongly Agree</option>
+</select>
+<div class = "invalid-feedback">   
+        <div>Please choose a valid option from the list.</div>
+</div>
+</div>
+<br>
+<label for = "thirdQuestion">I often have a difficult time controlling my anger.</label>
+<div class = "form-group">
+<select id="thirdQuestion" formControlName = "thirdQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.thirdQuestion.touched && sociopathForm.controls.thirdQuestion.invalid}">
+    <option value = "" disabled>--Please choose an option--</option>
+    <option value="Strongly Disagree">Strongly Disagree</option>
+    <option value="Disagree">Disagree</option>
+    <option value="Neutral">Don't Know/Not Sure</option>
+    <option value="Agree">Agree</option>
+    <option value="Strongly Agree">Strongly Agree</option>
+</select>
+<div class = "invalid-feedback">   
+        <div>Please choose a valid option from the list.</div>
+</div>
+</div>
+<br>
+<label for = "fourthQuestion">The enemy of my enemy is my friend.</label>
+<div class = "form-group">
+<select id="fourthQuestion" formControlName = "fourthQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.fourthQuestion.touched && sociopathForm.controls.fourthQuestion.invalid}">
+    <option value = "" disabled>--Please choose an option--</option>
+    <option value="Strongly Disagree">Strongly Disagree</option>
+    <option value="Disagree">Disagree</option>
+    <option value="Neutral">Don't Know/Not Sure</option>
+    <option value="Agree">Agree</option>
+    <option value="Strongly Agree">Strongly Agree</option>
+</select>
+<div class = "invalid-feedback">   
+        <div>Please choose a valid option from the list.</div>
+</div>
+</div>
+<br>
+<label for = "fifthQuestion">I often lie if I think I can benefit from it.</label>
+<div class = "form-group">   
+<select id="fifthQuestion" formControlName = "fifthQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.fifthQuestion.touched && sociopathForm.controls.fifthQuestion.invalid}">
+    <option value= "" disabled>--Please choose an option--</option>
+    <option value="Strongly Disagree">Strongly Disagree</option>
+    <option value="Disagree">Disagree</option>
+    <option value="Neutral">Don't Know/Not Sure</option>
+    <option value="Agree">Agree</option>
+    <option value="Strongly Agree">Strongly Agree</option>
+</select>
+<div class = "invalid-feedback">   
+        <div>Please choose a valid option from the list.</div>
+</div>
+</div>
+<br>
+	<input type="submit" value= "Submit" class = "btn btn-lg btn-danger" [disabled] = "sociopathForm.invalid">
+
+
+</form>
+</div>
+
+
+<!-- DISPLAY THIS SECTION AFTER SUCCESSFUL FORM SUBMIT -->
+
+<div *ngIf= "submitted" class = "container">
+<h1>Your results are in, {{sociopathForm.controls.name.value}}</h1>    
+<p>First question:  {{sociopathForm.controls.firstQuestion.value}}</p>
+<p>Second question: {{sociopathForm.controls.secondQuestion.value}}</p>
+<p>Third question:  {{sociopathForm.controls.thirdQuestion.value}}</p>
+<p>Fourth question: {{sociopathForm.controls.fourthQuestion.value}}</p>
+<p>Fifth question: {{sociopathForm.controls.fifthQuestion.value}}</p>
+<button (click) = "goBack()">Go Back</button>
