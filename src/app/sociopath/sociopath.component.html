@@ -97,9 +97,7 @@
 <!-- DISPLAY THIS SECTION AFTER SUCCESSFUL FORM SUBMIT -->
 
 <div *ngIf= "submitted" class = "container">
-<h1>Your results are in, {{sociopathForm.controls.name.value}}</h1>    
-
-<p>{{results}}</p>
+<app-results [results] = "score" [name] = "name"></app-results><br>
 <button  class = "btn btn-lg btn-danger"(click) = "goBack()">Go Back</button>
 </div>
 

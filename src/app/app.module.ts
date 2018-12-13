@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SociopathComponent } from './sociopath/sociopath.component';
 import { DepressionComponent } from './depression/depression.component';
+import { ResultsComponent } from './sociopath/results/results.component';
 
 
 const appRoutes: Routes = [
@@ -15,7 +16,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SociopathComponent,
-    DepressionComponent
+    DepressionComponent,
+    ResultsComponent
   ],
   imports: [
   	RouterModule.forRoot(appRoutes, {enableTracing: true}),

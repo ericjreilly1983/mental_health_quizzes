@@ -19,12 +19,14 @@ sociopathForm = new FormGroup({
   fifthQuestion: new FormControl('', Validators.required)
 });
 
+name;
 firstAnswer;
 secondAnswer;
 thirdAnswer;
 fourthAnswer;
 fifthAnswer;
 score;
+results;
 
   constructor() { }
 
@@ -42,6 +44,7 @@ score;
     this.submitted = !(this.submitted);
     this.formModel = form;
     //calculate results
+    this.name = this.formModel.controls.name.value;
     this.firstAnswer = parseInt(this.formModel.controls.firstQuestion.value, 10)
     this.secondAnswer = parseInt(this.formModel.controls.secondQuestion.value, 10)
     this.thirdAnswer = parseInt(this.formModel.controls.thirdQuestion.value, 10)
