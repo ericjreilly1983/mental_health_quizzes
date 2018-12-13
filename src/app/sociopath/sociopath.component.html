@@ -16,11 +16,11 @@
 <div class = "form-group">
 <select id="firstQuestion" formControlName = "firstQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.firstQuestion.touched && sociopathForm.controls.firstQuestion.invalid}">
     <option value = "" disabled>--Please choose an option--</option>
-    <option value="Strongly Disagree">Strongly Disagree</option>
-    <option value="Disagree">Disagree</option>
-    <option value="Neutral">Don't Know/Not Sure</option>
-    <option value="Agree">Agree</option>
-    <option value="Strongly Agree">Strongly Agree</option>
+    <option value= 1>Strongly Disagree</option>
+    <option value=2>Disagree</option>
+    <option value=3>Don't Know/Not Sure</option>
+    <option value=4>Agree</option>
+    <option value=5>Strongly Agree</option>
 </select>
 <div class = "invalid-feedback">   
         <div>Please choose a valid option from the list.</div>
@@ -31,11 +31,11 @@
 <div class = "form-group">
 <select id="secondQuestion" formControlName = "secondQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.secondQuestion.touched && sociopathForm.controls.secondQuestion.invalid}" required>
     <option value= "" disabled>--Please choose an option--</option>
-    <option value="Strongly Disagree">Strongly Disagree</option>
-    <option value="Disagree">Disagree</option>
-    <option value="Neutral">Don't Know/Not Sure</option>
-    <option value="Agree">Agree</option>
-    <option value="Strongly Agree">Strongly Agree</option>
+    <option value= 1>Strongly Disagree</option>
+    <option value=2>Disagree</option>
+    <option value=3>Don't Know/Not Sure</option>
+    <option value=4>Agree</option>
+    <option value=5>Strongly Agree</option>
 </select>
 <div class = "invalid-feedback">   
         <div>Please choose a valid option from the list.</div>
@@ -46,11 +46,11 @@
 <div class = "form-group">
 <select id="thirdQuestion" formControlName = "thirdQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.thirdQuestion.touched && sociopathForm.controls.thirdQuestion.invalid}">
     <option value = "" disabled>--Please choose an option--</option>
-    <option value="Strongly Disagree">Strongly Disagree</option>
-    <option value="Disagree">Disagree</option>
-    <option value="Neutral">Don't Know/Not Sure</option>
-    <option value="Agree">Agree</option>
-    <option value="Strongly Agree">Strongly Agree</option>
+    <option value= 1>Strongly Disagree</option>
+    <option value=2>Disagree</option>
+    <option value=3>Don't Know/Not Sure</option>
+    <option value=4>Agree</option>
+    <option value=5>Strongly Agree</option>
 </select>
 <div class = "invalid-feedback">   
         <div>Please choose a valid option from the list.</div>
@@ -61,11 +61,11 @@
 <div class = "form-group">
 <select id="fourthQuestion" formControlName = "fourthQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.fourthQuestion.touched && sociopathForm.controls.fourthQuestion.invalid}">
     <option value = "" disabled>--Please choose an option--</option>
-    <option value="Strongly Disagree">Strongly Disagree</option>
-    <option value="Disagree">Disagree</option>
-    <option value="Neutral">Don't Know/Not Sure</option>
-    <option value="Agree">Agree</option>
-    <option value="Strongly Agree">Strongly Agree</option>
+    <option value= 1>Strongly Disagree</option>
+    <option value = 2>Disagree</option>
+    <option value=3>Don't Know/Not Sure</option>
+    <option value=4>Agree</option>
+    <option value=5>Strongly Agree</option>
 </select>
 <div class = "invalid-feedback">   
         <div>Please choose a valid option from the list.</div>
@@ -76,11 +76,11 @@
 <div class = "form-group">   
 <select id="fifthQuestion" formControlName = "fifthQuestion" class = "form-control" [ngClass] = "{'is-invalid': sociopathForm.controls.fifthQuestion.touched && sociopathForm.controls.fifthQuestion.invalid}">
     <option value= "" disabled>--Please choose an option--</option>
-    <option value="Strongly Disagree">Strongly Disagree</option>
-    <option value="Disagree">Disagree</option>
-    <option value="Neutral">Don't Know/Not Sure</option>
-    <option value="Agree">Agree</option>
-    <option value="Strongly Agree">Strongly Agree</option>
+    <option value= 1>Strongly Disagree</option>
+    <option value= 2>Disagree</option>
+    <option value= 3>Don't Know/Not Sure</option>
+    <option value= 4>Agree</option>
+    <option value= 5>Strongly Agree</option>
 </select>
 <div class = "invalid-feedback">   
         <div>Please choose a valid option from the list.</div>
@@ -98,9 +98,9 @@
 
 <div *ngIf= "submitted" class = "container">
 <h1>Your results are in, {{sociopathForm.controls.name.value}}</h1>    
-<p>First question:  {{sociopathForm.controls.firstQuestion.value}}</p>
-<p>Second question: {{sociopathForm.controls.secondQuestion.value}}</p>
-<p>Third question:  {{sociopathForm.controls.thirdQuestion.value}}</p>
-<p>Fourth question: {{sociopathForm.controls.fourthQuestion.value}}</p>
-<p>Fifth question: {{sociopathForm.controls.fifthQuestion.value}}</p>
-<button (click) = "goBack()">Go Back</button>
+
+<p>{{results}}</p>
+<button  class = "btn btn-lg btn-danger"(click) = "goBack()">Go Back</button>
+</div>
+
+
